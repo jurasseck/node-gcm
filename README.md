@@ -95,19 +95,19 @@ registrationTokens.push('regToken2');
 
 // Send the message
 // ... trying only once
-sender.sendNoRetry(message, { registrationTokens: registrationTokens }, function(err, result) {
+sender.sendNoRetry(message, { registrationIds: registrationTokens }, function(err, result) {
   if(err) console.error(err);
   else    console.log(result);
 });
 
 // ... or retrying
-sender.send(message, { registrationTokens: registrationTokens }, function (err, result) {
+sender.send(message, { registrationIds: registrationTokens }, function (err, result) {
   if(err) console.error(err);
   else    console.log(result);
 });
 
 // ... or retrying a specific number of times (10)
-sender.send(message, { registrationTokens: registrationTokens }, 10, function (err, result) {
+sender.send(message, { registrationIds: registrationTokens }, 10, function (err, result) {
   if(err) console.error(err);
   else    console.log(result);
 });
